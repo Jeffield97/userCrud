@@ -28,7 +28,7 @@ const User = sequelize.define('user', {
         allowNull: false
     },
     isVerified: {
-        type: DataTypes.STRING,
+        type: DataTypes.BOOLEAN,
         allowNull: false
     },
 });

@@ -5,7 +5,7 @@ const verifyJWT = require('../utils/VerifyJWT');
 const User = express.Router();
 
 User.route('/')
-    .get(getAll)
+    .get(verifyJWT,getAll)
 // User.route('/register')
     .post(register)
 User.route('/login')
@@ -13,7 +13,7 @@ User.route('/login')
 User.route('/me')
     .get(verifyJWT,me)
 User.route('/:id')
-    .get(getOne)
-    .put(update)
-    .delete(remove)
+    .get(verifyJWT,getOne)
+    .put(verifyJWT,update)
+    .delete(verifyJWT,remove)
 module.exports = User;
